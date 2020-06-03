@@ -6,21 +6,28 @@ class ListaProductos extends Component {
         super(props);
     }
 
-    productosEnStock = () => this.props.productos.filter(fruta => fruta.cantidad > 0).map(fruta => <li>{fruta.nombre}</li>)
+   
 
+    productosSinStock = () => this.props.productos.filter(fruta => fruta.cantidad == 0)
     
+   
+
 
     render() {
         return (
             <div>
+              
+                
+
                 <h2>
-                    {this.props.titulo}
+                {this.props.titulo}
                 </h2>
 
                 <ul>
-                    {this.productosEnStock()}
+                    {this.productosSinStock().map(fruta => <li>{fruta.nombre}</li>)}
                 </ul>
 
+            
             </div>
         )
     }
