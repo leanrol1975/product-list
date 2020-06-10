@@ -6,7 +6,7 @@ class ListaProductos extends Component {
         super(props);
     }
 
-    productosEnStock = () => this.props.productos.filter(fruta => fruta.cantidad > 0).map(fruta => <li>{fruta.nombre}</li>)
+    productosEnStock = () => this.props.productos.map(fruta => <li>{fruta.nombre}</li>)
 
     
 
