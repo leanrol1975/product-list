@@ -39,12 +39,15 @@ function App() {
       cantidad: 0
     }
   ];
+
+let sinStock = () => productos.filter(art => art.cantidad == 0);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ListaProductos titulo="Productos en stock" productos={productos} />
-      
+        <ListaProductos titulo="Productos" productos={productos} />
+        <ListaProductos titulo="Productos sin stock" productos={sinStock()} />
       </header>
     </div>
   );
